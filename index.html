@@ -114,7 +114,6 @@
 
   <h2>Select Your Payment Method</h2>
 
-  <!-- Dropdown to select payment -->
   <label for="payment">Payment Method:</label>
   <select id="payment" name="payment" onchange="showQR()">
     <option value="">-- Select --</option>
@@ -123,7 +122,6 @@
     <option value="imepay">IME Pay</option>
   </select>
 
-  <!-- QR images (make sure these images are uploaded in GitHub) -->
   <div id="qr-section">
     <img id="esewaQR" class="qr-image" src="esewa.png" alt="eSewa QR">
     <img id="khaltiQR" class="qr-image" src="khalti.png" alt="Khalti QR">
@@ -135,12 +133,10 @@
       var payment = document.getElementById("payment").value;
       var allQRs = document.querySelectorAll(".qr-image");
 
-      // Hide all QR images
       allQRs.forEach(function(qr) {
         qr.style.display = "none";
       });
 
-      // Show the selected QR image
       if (payment) {
         var selectedQR = document.getElementById(payment + "QR");
         if (selectedQR) {
