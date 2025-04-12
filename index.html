@@ -8,19 +8,17 @@
       background: #0d0d0d;
       font-family: Arial, sans-serif;
       color: #fff;
-      text-align: center;
       padding: 30px;
+      text-align: center;
     }
-
     .container {
       background-color: #1a1a1a;
       padding: 25px;
       border-radius: 10px;
-      max-width: 450px;
+      max-width: 480px;
       margin: auto;
       box-shadow: 0 0 10px rgba(0,255,255,0.3);
     }
-
     input, select {
       width: 90%;
       padding: 12px;
@@ -29,7 +27,6 @@
       border-radius: 5px;
       font-size: 16px;
     }
-
     button {
       background-color: #00f0ff;
       border: none;
@@ -39,48 +36,25 @@
       font-size: 16px;
       border-radius: 5px;
       cursor: pointer;
-      transition: 0.3s;
     }
-
-    button:hover {
-      background-color: #00d0e0;
+    .qr-image {
+      margin-top: 10px;
+      display: none;
     }
-
-    .payment-section {
-      margin-top: 30px;
-      text-align: left;
-    }
-
-    .qr-box {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 15px;
-      flex-wrap: wrap;
-    }
-
-    .qr-box img {
-      width: 130px;
-      height: auto;
+    .qr-image img {
+      width: 150px;
       border: 2px solid #00f0ff;
       border-radius: 10px;
     }
-
     a {
       color: #00f0ff;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
-    h1 {
-      color: #00f0ff;
-    }
-
     .contact {
-      margin-top: 15px;
+      margin-top: 20px;
       font-size: 15px;
     }
   </style>
@@ -88,13 +62,16 @@
 <body>
 
   <div class="container">
-    <h1>Free Fire Top-Up</h1>
+    <h2>Free Fire Diamond Top-Up</h2>
 
-    <form>
-      <input type="text" placeholder="Enter your Free Fire Player ID" required>
+    <form action="https://formsubmit.co/your-email@gmail.com" method="POST" enctype="multipart/form-data">
       
-      <select required>
-        <option value="">-- Select Diamond Package --</option>
+      <input type="text" name="Full Name" placeholder="Your Name" required><br>
+      <input type="text" name="Phone Number" placeholder="Phone Number" required><br>
+      <input type="text" name="Player UID" placeholder="Enter Free Fire UID" required><br>
+
+      <select name="Diamond Package" required>
+          <option value="">-- Select Diamond Package --</option>
         <option value="50">50 Diamonds - Rs. 45</option>
             <option value="115">115 Diamonds - Rs. 90</option>
             <option value="240">240 Diamonds - Rs. 190</option>
@@ -111,45 +88,50 @@
             <option value="weekly">weekly Diamonds - Rs. 190</option>
             <option value="Monthly">Monthly Diamonds - Rs. 940</option>
             <option value="Level up">Level up Diamonds - Rs. 195</option>
+      </select><br>
+
+      <select name="Payment Method" id="payment-method" onchange="showQR()" required>
+        <option value="">-- Select Payment Method --</option>
+        <option value="esewa">eSewa</option>
+        <option value="khalti">Khalti</option>
       </select>
-      
-      <input type="text" placeholder="Your eSewa/Khalti Number" required>
-      <button type="submit">Place Order</button>
+
+      <div id="esewa-qr" class="qr-image">
+        <p>Scan eSewa QR:</p>
+        <img src="esewa-qr.jpg" alt="eSewa QR">
+      </div>
+
+      <div id="khalti-qr" class="qr-image">
+        <p>Scan Khalti QR:</p>
+        <img src="khalti-qr.jpg" alt="Khalti QR">
+      </div>
+
+      <label>Upload Payment Screenshot:</label><br>
+      <input type="file" name="attachment" accept="image/*" required><br><br>
+
+      <button type="submit">Submit Order</button>
     </form>
 
-    <div class="payment-section">
-      <h2>Payment Options</h2>
-     
-  <h2>Select Payment Method to View QR</h2>
-  
-  <select id="payment-select" onchange="showQR()">
-    <option value="">-- Select Method --</option>
-    <option value="esewa">eSewa</option>
-    <option value="khalti">Khalti</option>
-  </select>
-
-  <div id="esewa-qr" class="qr-image">
-    <p>Scan this eSewa QR:</p>
-    <img src="esewa-qr.jpg" alt="eSewa QR Code">
-  </div>
-
-  <div id="khalti-qr" class="qr-image">
-    <p>Scan this Khalti QR:</p>
-    <img src="khalti-qr.jpg" alt="Khalti QR Code">
-  </div>
-
- 
-      </div>
-
-        <label>Upload Payment Screenshot:</label><br>
-  <input type="file" name="attachment" accept="image/*" required><br><br>
-
-      <div class="contact">
-        <p>After payment, please send a screenshot & Player ID to:</p>
-        <p><strong>WhatsApp: <a href="https://wa.me/9779767502114" target="_blank">+9779767502114</a></strong></p>
-      </div>
+    <div class="contact">
+      <p><strong>Need Help? Contact Us:</strong></p>
+      <p>WhatsApp: <a href="https://wa.me/9779767502114" target="_blank">+9779767502114</a></p>
+      <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61574914865275" target="_blank">junGay Gaming Store</a></p>
     </div>
   </div>
+
+  <script>
+    function showQR() {
+      var method = document.getElementById("payment-method").value;
+      document.getElementById("esewa-qr").style.display = "none";
+      document.getElementById("khalti-qr").style.display = "none";
+
+      if (method === "esewa") {
+        document.getElementById("esewa-qr").style.display = "block";
+      } else if (method === "khalti") {
+        document.getElementById("khalti-qr").style.display = "block";
+      }
+    }
+  </script>
 
 </body>
 </html>
