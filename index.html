@@ -5,146 +5,101 @@
   <title>Free Fire Diamond Top-Up</title>
   <style>
     body {
-      background: #0d0d0d;
       font-family: Arial, sans-serif;
-      color: #fff;
-      padding: 30px;
-      text-align: center;
-    }
-    .container {
-      background-color: #1a1a1a;
-      padding: 25px;
-      border-radius: 10px;
-      max-width: 480px;
+      padding: 20px;
+      max-width: 500px;
       margin: auto;
-      box-shadow: 0 0 10px rgba(0,255,255,0.3);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
     }
     input, select {
-      width: 90%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-      font-size: 16px;
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
     }
     button {
-      background-color: #00f0ff;
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background-color: #28a745;
+      color: white;
       border: none;
-      padding: 12px 25px;
-      color: black;
-      font-weight: bold;
       font-size: 16px;
-      border-radius: 5px;
       cursor: pointer;
+      border-radius: 5px;
     }
-    .qr-image {
-      margin-top: 20px;
-      display: none;
-      text-align: center;
-    }
-    .qr-image img {
-      max-width: 100%;
-      width: 220px;
-      height: auto;
-      border: 2px solid #00f0ff;
-      border-radius: 12px;
-      box-shadow: 0 0 8px rgba(0,255,255,0.5);
-    }
-    a {
-      color: #00f0ff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .contact {
-      margin-top: 20px;
-      font-size: 15px;
-    }
-  </style>
-</head>
-<body>
-
-  <div class="container">
-    <h2>Free Fire Diamond Top-Up Order</h2>
-    <form action="https://formsubmit.co/jungayxprime69@gmail.com" method="POST" enctype="multipart/form-data">
-      <input type="hidden" name="_next" value="https://jungayxprime.github.io/freefire-topup/thankyou.html">
-
-      <input type="hidden" name="_subject" value="New Free Fire Top-Up Order">
-      <input type="text" name="Full Name" placeholder="Your Name" required>
-      <input type="text" name="Phone Number" placeholder="Your Phone Number" required>
-      <input type="text" name="Player UID" placeholder="Enter Your Free Fire UID" required>
-
-      <select name="Diamond Package" required>
-        <option value="">-- Select Diamond Package --</option>
-        <option value="50">50 Diamonds - Rs. 45</option>
-            <option value="115">115 Diamonds - Rs. 90</option>
-            <option value="240">240 Diamonds - Rs. 190</option>
-            <option value="480">500 Diamonds - Rs. 360</option>
-            <option value="610">610 Diamonds - Rs. 450</option>
-            <option value="850">850 Diamonds - Rs. 650</option>
-            <option value="1090">1090 Diamonds - Rs. 820</option>
-            <option value="1240">1240 Diamonds - Rs. 910</option>
-            <option value="1480">1480 Diamonds - Rs. 1150</option>
-            <option value="1720">1720 Diamonds - Rs. 1350</option>
-            <option value="2090">2090 Diamonds - Rs. 1620</option>
-            <option value="2530">2530 Diamonds - Rs. 2050</option>
-            <option value="5060">5060 Diamonds - Rs. 4050</option>
-            <option value="weekly">weekly Diamonds - Rs. 190</option>
-            <option value="Monthly">Monthly Diamonds - Rs. 940</option>
-            <option value="Level up">Level up Diamonds - Rs. 195</option>
-
-      </select><br>
-
-     <head>
-  <meta charset="UTF-8">
-  <title>Payment Method with QR</title>
-  <style>
     .qr-image {
       display: none;
       margin-top: 15px;
-      width: 250px;
-      height: auto;
-      border: 1px solid #ccc;
-      border-radius: 8px;
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
 
-  <h2>Select Your Payment Method</h2>
+  <h2>Free Fire Top-Up Order Form</h2>
 
-  <label for="payment">Payment Method:</label>
-  <select id="payment" name="payment" onchange="showQR()">
-    <option value="">-- Select --</option>
-    <option value="esewa">eSewa</option>
-    <option value="khalti">Khalti</option>
-  </select>
+  <form action="https://formsubmit.co/jungayxprime69@gmail.com" method="POST" enctype="multipart/form-data">
 
-  <div id="qr-section">
+    <!-- UID -->
+    <label for="uid">Free Fire UID:</label>
+    <input type="text" id="uid" name="Free Fire UID" required>
+
+    <!-- Diamond Selection -->
+    <label for="diamond">Select Diamond Package:</label>
+    <select id="diamond" name="Diamond Package" required>
+      <option value="">-- Select --</option>
+      <option value="100">100 Diamonds - Rs.100</option>
+      <option value="210">210 Diamonds - Rs.200</option>
+      <option value="530">530 Diamonds - Rs.500</option>
+      <option value="1080">1080 Diamonds - Rs.1000</option>
+    </select>
+
+    <!-- Payment Method -->
+    <label for="payment">Payment Method:</label>
+    <select id="payment" name="Payment Method" onchange="showQR()" required>
+      <option value="">-- Select --</option>
+      <option value="esewa">eSewa</option>
+      <option value="khalti">Khalti</option>
+    </select>
+
+    <!-- QR Images -->
     <img id="esewaQR" class="qr-image" src="esewa-qr.jpg" alt="eSewa QR">
     <img id="khaltiQR" class="qr-image" src="khalti-qr.jpg" alt="Khalti QR">
-  </div>
+    
+
+    <!-- Screenshot Upload -->
+    <label for="screenshot">Upload Payment Screenshot:</label>
+    <input type="file" id="screenshot" name="attachment" accept="image/*" required>
+
+    <!-- Hidden: Redirect after submit -->
+    <input type="hidden" name="_next" value="https://yourusername.github.io/yourrepo/thankyou.html">
+    <input type="hidden" name="_subject" value="New Free Fire Top-Up Order">
+
+    <!-- Submit Button -->
+    <button type="submit">Submit Order</button>
+  </form>
 
   <script>
     function showQR() {
-      var payment = document.getElementById("payment").value;
-      var allQRs = document.querySelectorAll(".qr-image");
+      const payment = document.getElementById("payment").value;
+      const allQRs = document.querySelectorAll(".qr-image");
 
-      allQRs.forEach(function(qr) {
-        qr.style.display = "none";
-      });
+      allQRs.forEach(qr => qr.style.display = "none");
 
       if (payment) {
-        var selectedQR = document.getElementById(payment + "QR");
-        if (selectedQR) {
-          selectedQR.style.display = "block";
+        const qrToShow = document.getElementById(payment + "QR");
+        if (qrToShow) {
+          qrToShow.style.display = "block";
         }
       }
     }
   </script>
-
-</body>
 
 </body>
 </html>
