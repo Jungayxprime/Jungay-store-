@@ -119,12 +119,38 @@
 
     <div class="payment-section">
       <h2>Payment Options</h2>
-      <p><strong>eSewa ID:</strong> 9812581344</p>
-      <p><strong>Khalti ID:</strong> 9812581344</p>
+     
+  <h2>Select Payment Method to View QR</h2>
+  
+  <select id="payment-select" onchange="showQR()">
+    <option value="">-- Select Method --</option>
+    <option value="esewa">eSewa</option>
+    <option value="khalti">Khalti</option>
+  </select>
 
-      <div class="qr-box">
-        <img src="esewa-qr.jpg" alt="eSewa QR Code">
-        <img src="khalti-qr.jpg" alt="Khalti QR Code">
+  <div id="esewa-qr" class="qr-image">
+    <p>Scan this eSewa QR:</p>
+    <img src="esewa-qr.jpg" alt="eSewa QR Code">
+  </div>
+
+  <div id="khalti-qr" class="qr-image">
+    <p>Scan this Khalti QR:</p>
+    <img src="khalti-qr.jpg" alt="Khalti QR Code">
+  </div>
+
+  <script>
+    function showQR() {
+      var selection = document.getElementById("payment-select").value;
+      document.getElementById("esewa-qr").style.display = "none";
+      document.getElementById("khalti-qr").style.display = "none";
+      
+      if (selection === "esewa") {
+        document.getElementById("esewa-qr").style.display = "block";
+      } else if (selection === "khalti") {
+        document.getElementById("khalti-qr").style.display = "block";
+      }
+    }
+  </script>
       </div>
 
         <label>Upload Payment Screenshot:</label><br>
