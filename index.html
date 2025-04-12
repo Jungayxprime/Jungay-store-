@@ -85,12 +85,12 @@
       var payment = document.getElementById("payment").value;
       var allQRs = document.querySelectorAll(".qr-image");
 
-      // Hide all first
+     
       allQRs.forEach(function(img) {
         img.style.display = "none";
       });
 
-      // Show selected one
+    
       if (payment) {
         document.getElementById(payment + "QR").style.display = "block";
       }
