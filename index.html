@@ -1,16 +1,138 @@
-<form action="https://formsubmit.co/your-email@gmail.com" method="POST">
-  <input type="text" name="Player ID" placeholder="Enter your Free Fire Player ID" required><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free Fire Diamond Top-Up</title>
+  <style>
+    body {
+      background: #0d0d0d;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+    }
 
-  <select name="Diamond Package" required>
-    <option value="">-- Select Diamond Package --</option>
-    <option value="100">100 Diamonds - Rs.100</option>
-    <option value="210">210 Diamonds - Rs.200</option>
-    <option value="530">530 Diamonds - Rs.500</option>
-    <option value="1080">1080 Diamonds - Rs.1000</option>
-  </select><br>
+    .container {
+      background-color: #1a1a1a;
+      padding: 25px;
+      border-radius: 10px;
+      max-width: 450px;
+      margin: auto;
+      box-shadow: 0 0 10px rgba(0,255,255,0.3);
+    }
 
-  <input type="text" name="Payment Number" placeholder="Your eSewa/Khalti Number" required><br>
-  <input type="text" name="Amount Paid" placeholder="Amount Paid" required><br>
+    input, select {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
 
-  <button type="submit">Submit Payment</button>
-</form>
+    button {
+      background-color: #00f0ff;
+      border: none;
+      padding: 12px 25px;
+      color: black;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #00d0e0;
+    }
+
+    .payment-section {
+      margin-top: 30px;
+      text-align: left;
+    }
+
+    .qr-box {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .qr-box img {
+      width: 130px;
+      height: auto;
+      border: 2px solid #00f0ff;
+      border-radius: 10px;
+    }
+
+    a {
+      color: #00f0ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      color: #00f0ff;
+    }
+
+    .contact {
+      margin-top: 15px;
+      font-size: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Free Fire Top-Up</h1>
+
+    <form>
+      <input type="text" placeholder="Enter your Free Fire Player ID" required>
+      
+      <select required>
+        <option value="">-- Select Diamond Package --</option>
+        <option value="50">50 Diamonds - Rs. 45</option>
+            <option value="115">115 Diamonds - Rs. 90</option>
+            <option value="240">240 Diamonds - Rs. 190</option>
+            <option value="480">500 Diamonds - Rs. 360</option>
+            <option value="610">610 Diamonds - Rs. 450</option>
+            <option value="850">850 Diamonds - Rs. 650</option>
+            <option value="1090">1090 Diamonds - Rs. 820</option>
+            <option value="1240">1240 Diamonds - Rs. 910</option>
+            <option value="1480">1480 Diamonds - Rs. 1150</option>
+            <option value="1720">1720 Diamonds - Rs. 1350</option>
+            <option value="2090">2090 Diamonds - Rs. 1620</option>
+            <option value="2530">2530 Diamonds - Rs. 2050</option>
+            <option value="5060">5060 Diamonds - Rs. 4050</option>
+            <option value="weekly">weekly Diamonds - Rs. 190</option>
+            <option value="Monthly">Monthly Diamonds - Rs. 940</option>
+            <option value="Level up">Level up Diamonds - Rs. 195</option>
+      </select>
+      
+      <input type="text" placeholder="Your eSewa/Khalti Number" required>
+      <button type="submit">Place Order</button>
+    </form>
+
+    <div class="payment-section">
+      <h2>Payment Options</h2>
+      <p><strong>eSewa ID:</strong> 9812581344</p>
+      <p><strong>Khalti ID:</strong> 9812581344</p>
+
+      <div class="qr-box">
+        <img src="esewa-qr.jpg" alt="eSewa QR Code">
+        <img src="khalti-qr.jpg" alt="Khalti QR Code">
+      </div>
+
+      <div class="contact">
+        <p>After payment, please send a screenshot & Player ID to:</p>
+        <p><strong>WhatsApp: <a href="https://wa.me/97798XXXXXXXX" target="_blank">+97798XXXXXXXX</a></strong></p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
