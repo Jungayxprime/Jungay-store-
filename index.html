@@ -66,21 +66,36 @@
             <option value="Level up">Level up Diamonds - Rs. 195</option>
       </select><br>
 
-      <select name="Payment Method" id="payment-method" onchange="showQR()" required>
-        <option value="">-- Select Payment Method --</option>
-        <option value="esewa">eSewa</option>
-        <option value="khalti">Khalti</option>
-      </select>
+      <h2>Select Payment Method</h2>
 
-      <div id="esewa-qr" class="qr-image">
-        <p>Scan eSewa QR:</p>
-        <img src="esewa-qr.jpg" alt="eSewa QR">
-      </div>
+  <label for="payment">Choose Payment Method:</label>
+  <select id="payment" name="payment" onchange="showQR()">
+    <option value="">-- Select --</option>
+    <option value="esewa">eSewa</option>
+    <option value="khalti">Khalti</option>
+  </select>
 
-      <div id="khalti-qr" class="qr-image">
-        <p>Scan Khalti QR:</p>
-        <img src="khalti-qr.jpg" alt="Khalti QR">
-      </div>
+  <div id="qrCodes">
+    <img id="esewaQR" class="qr-image" src="esewa.jpg" alt="eSewa QR">
+    <img id="khaltiQR" class="qr-image" src="khalti.jpg" alt="Khalti QR">
+  </div>
+
+  <script>
+    function showQR() {
+      var payment = document.getElementById("payment").value;
+      var allQRs = document.querySelectorAll(".qr-image");
+
+      // Hide all first
+      allQRs.forEach(function(img) {
+        img.style.display = "none";
+      });
+
+      // Show selected one
+      if (payment) {
+        document.getElementById(payment + "QR").style.display = "block";
+      }
+    }
+  </script>
 
       <label>Upload Payment Screenshot:</label><br>
       <input type="file" name="attachment" accept="image/*" required><br><br>
