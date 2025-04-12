@@ -38,13 +38,17 @@
       cursor: pointer;
     }
     .qr-image {
-      margin-top: 10px;
+      margin-top: 20px;
       display: none;
+      text-align: center;
     }
     .qr-image img {
-      width: 150px;
+      max-width: 100%;
+      width: 220px;
+      height: auto;
       border: 2px solid #00f0ff;
-      border-radius: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,255,255,0.5);
     }
     a {
       color: #00f0ff;
@@ -71,23 +75,11 @@
       <input type="text" name="Player UID" placeholder="Enter Free Fire UID" required><br>
 
       <select name="Diamond Package" required>
-          <option value="">-- Select Diamond Package --</option>
-        <option value="50">50 Diamonds - Rs. 45</option>
-            <option value="115">115 Diamonds - Rs. 90</option>
-            <option value="240">240 Diamonds - Rs. 190</option>
-            <option value="480">500 Diamonds - Rs. 360</option>
-            <option value="610">610 Diamonds - Rs. 450</option>
-            <option value="850">850 Diamonds - Rs. 650</option>
-            <option value="1090">1090 Diamonds - Rs. 820</option>
-            <option value="1240">1240 Diamonds - Rs. 910</option>
-            <option value="1480">1480 Diamonds - Rs. 1150</option>
-            <option value="1720">1720 Diamonds - Rs. 1350</option>
-            <option value="2090">2090 Diamonds - Rs. 1620</option>
-            <option value="2530">2530 Diamonds - Rs. 2050</option>
-            <option value="5060">5060 Diamonds - Rs. 4050</option>
-            <option value="weekly">weekly Diamonds - Rs. 190</option>
-            <option value="Monthly">Monthly Diamonds - Rs. 940</option>
-            <option value="Level up">Level up Diamonds - Rs. 195</option>
+        <option value="">-- Select Diamond Package --</option>
+        <option value="100">100 Diamonds - Rs.100</option>
+        <option value="210">210 Diamonds - Rs.200</option>
+        <option value="530">530 Diamonds - Rs.500</option>
+        <option value="1080">1080 Diamonds - Rs.1000</option>
       </select><br>
 
       <select name="Payment Method" id="payment-method" onchange="showQR()" required>
@@ -98,12 +90,12 @@
 
       <div id="esewa-qr" class="qr-image">
         <p>Scan eSewa QR:</p>
-        <img src="esewa-qr.jpg" alt="eSewa QR">
+        <img src="esewa-qr.png" alt="eSewa QR">
       </div>
 
       <div id="khalti-qr" class="qr-image">
         <p>Scan Khalti QR:</p>
-        <img src="khalti-qr.jpg" alt="Khalti QR">
+        <img src="khalti-qr.png" alt="Khalti QR">
       </div>
 
       <label>Upload Payment Screenshot:</label><br>
@@ -114,8 +106,8 @@
 
     <div class="contact">
       <p><strong>Need Help? Contact Us:</strong></p>
-      <p>WhatsApp: <a href="https://wa.me/9779767502114" target="_blank">+9779767502114</a></p>
-      <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61574914865275" target="_blank">junGay Gaming Store</a></p>
+      <p>WhatsApp: <a href="https://wa.me/97798XXXXXXXX" target="_blank">+97798XXXXXXXX</a></p>
+      <p>Facebook: <a href="https://facebook.com/yourpage" target="_blank">Free Fire TopUp Nepal</a></p>
     </div>
   </div>
 
